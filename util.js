@@ -5,7 +5,7 @@
  * @returns {boolean} false if it dosen't exist, true if it does, string if the GET param has a value associated.
  */
 function getParam(p,url){
-    let a = (url === undefined) ? window.location.search.substr(1) : url;
+    let a = (url !== undefined) ? url.substr(url.indexOf("?") + 1) : window.location.search.substr(1);
     a = a.split("&");
     let found = "";
     a.forEach(function(param){
