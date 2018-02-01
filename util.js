@@ -4,8 +4,8 @@
  * @param p the key of the GET param
  * @returns {boolean} false if it dosen't exist, true if it does, string if the GET param has a value associated.
  */
-function getParam(p){
-    let a = window.location.search.substr(1);
+function getParam(p,url){
+    let a = (url === undefined) ? window.location.search.substr(1) : url;
     a = a.split("&");
     let found = "";
     a.forEach(function(param){
